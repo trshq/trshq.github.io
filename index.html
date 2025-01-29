@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>GLAM ESSENCE</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body onload="loadHomepage()">
+
+  <div id="ad-popup" class="ad-popup">
+    <div class="ad-popup-content">
+      <img src="./assets/img/ad-popup.jpg" alt="Advertisement" class="ad-popup-img">
+      <button class="ad-close-btn" onclick="closeAdPopup()">X</button>
+    </div>
+  </div>
+
+  <div class="popup-overlay" id="popupOverlay">
+    <div class="popup-content">
+      <button class="close-popup" id="closePopup">&times;</button>
+      <h2>Contact Us</h2>
+      <form id="contactForm">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="Enter your message" required></textarea>
+        
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-lg" style="background-color: #ffffff;">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="./assets/img/logo/logo-nobg.png" alt="Logo" class="rounded-circle"
+          style="height: 50px; width: 50px; margin-right: 20px; object-fit: cover;">
+        <span class="fs-2">GLAM ESSENCE</span>
+      </a>
+
+
+      <form class="d-flex me-3" role="search">
+        <input class="form-control me-3" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-light" type="submit">Search</button>
+      </form>
+
+
+      
+    </div>
+  </nav>
+
+  <div class="sticky-topBar">
+    <p class="discountcode">Get your first Glam Lipstick for only Php 10.00 (Php 299.00). Use code GLAMEROUS</p>
+
+
+    <div class="navposition">
+      <ul class="nav justify-content-center">
+        <li class="nav-item"><a class="nav-link active" href="./index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="./gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="./about.html" >About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" id="openPopup">Services</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class=" mb-4"></div>
+      <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner" id="carousel-container">
+          
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="circle-container">
+    <div class="circle" onclick="updateItems('all')" style="background-color: var(--primary-color);");">
+      All Products</div>
+    <div class="circle" onclick="updateItems('lipsticks')" style="background-size: cover;background-image: url('./assets/img/categories/lipstick.png');">
+      Lipsticks</div>
+    <div class="circle" onclick="updateItems('palettes')"style="background-size: cover;background-image: url('./assets/img/categories/palette.png');">
+      Palette</div>
+    <div class="circle" onclick="updateItems('moisturizers')"style="background-size: cover;background-image: url('./assets/img/categories/moisturizer.png');">
+      Moisturizer</div>
+    <div class="circle" onclick="updateItems('perfumes')"style="background-size: cover;background-image: url('./assets/img/categories/perfume.png');">
+      Perfume</div>
+    <div class="circle" onclick="updateItems('foundations')"style="background-size: cover;background-image: url('./assets/img/categories/foundation.png');">
+      Foundations</div>
+    <div class="circle" onclick="updateItems('skincare')"style="background-size: cover;background-image: url('./assets/img/categories/sunscreen.png');">
+      Skincare</div>
+  </div>
+
+  <h1 class="text-align-center" id="product-display-title">All Products</h1>
+  <div class="container justify-content-center">
+    <div class="row justify-content-center" id="product-section"></div>
+  </div>
+  <footer class="text-center text-lg-start text-muted container">
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+      <div class="me-5 d-none d-lg-block">
+        <span>Get connected with us on social networks:</span>
+      </div>
+      <div>
+        <a href="" class="me-4 text-reset">
+          <i class="fa fa-facebook-f"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fa fa-twitter"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fa fa-google"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fa fa-instagram"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fa fa-linkedin"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fa fa-github"></i>
+        </a>
+      </div>
+    </section>
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <div class="row mt-3">
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fa fa-gem me-3"></i>Glam Essence
+            </h6>
+            <p>
+              We are a group of very professional make up makers and sellers 
+            </p>
+          </div>
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+            <p><i class="fa fa-home me-3"></i> Sta. Maria, Bulacan, Philippines</p>
+            <p>
+              <i class="fa fa-envelope me-3"></i>
+              itsglamessence@gmail.com
+            </p>
+            <p><i class="fa fa-phone me-3"></i> + 63 949 647 6352</p>
+            <p><i class="fa fa-print me-3"></i> + 63 949 647 6352</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="text-center p-4"">
+      © 2025 Copyright:
+      <a class="text-reset fw-bold" href="https://mdbootstrap.com/">GlamEssentials INC.</a>
+    </div>
+  </footer>
+
+
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
